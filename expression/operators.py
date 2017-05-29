@@ -161,7 +161,7 @@ class Tg(UnaryOperator):
         return 'tg'
 
     def calc(self, v):
-        return math.tg(v)
+        return math.tan(v)
 
     def derivative_impl(self):
         return Divide(Const(1), Pow(Cos(self.arg), 2))
@@ -172,7 +172,7 @@ class Ctg(UnaryOperator):
         return 'ctg'
 
     def calc(self, v):
-        return math.ctg(v)
+        return 1/math.tan(v)
 
     def derivative_impl(self):
         return Divide(Negate(Const(1)), Pow(Sin(self.arg), 2))
@@ -183,7 +183,7 @@ class Arcsin(UnaryOperator):
         return 'arcsin'
 
     def calc(self, v):
-        return math.arcsin(v)
+        return math.asin(v)
 
     def derivative_impl(self):
         return Divide(Const(1), Pow(Substract(Const(1), Pow(self.arg, 2)), 0.5))
@@ -194,7 +194,7 @@ class Arctg(UnaryOperator):
         return 'arctg'
 
     def calc(self, v):
-        return math.arctg(v)
+        return math.atan(v)
 
     def derivative_impl(self):
         return Divide(Const(1), Add(Const(1), Pow(self.arg, 2)))
@@ -205,7 +205,7 @@ class Ln(UnaryOperator):
         return 'ln'
 
     def calc(self, v):
-        return math.ln(v)
+        return math.log(v)
 
     def derivative_impl(self):
         return Divide(Const(1), self.arg)
