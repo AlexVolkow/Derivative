@@ -5,7 +5,7 @@
 * `evaluate(x)` - подсчет значения выражения 
 * `derivative()`- получение первой производной 
 * Пример использования
-```
+```python
 expr = parseExpression("(x + 2) * cos(x)")
 print(expr) # ((x+2.0)*(cos(x)))
 print(expr.evaluate(2)) # -1.6645873461885696
